@@ -21,14 +21,14 @@ build:
 
 requirements:
   build:
-    - python
+    - python ==python2.7
     - setuptools
     - easybuild-easyconfigs ==3.1.0
     - easybuild-easyblocks ==3.1.0
     - easybuild-framework ==3.1.0
 
   run:
-    - python
+    - python ==python2.7
     - easybuild-easyconfigs ==3.1.0
     - easybuild-easyblocks ==3.1.0
     - easybuild-framework ==3.1.0
