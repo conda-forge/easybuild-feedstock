@@ -1,37 +1,33 @@
-{% set name = "easybuild" %}
 {% set version = "3.1.0" %}
-{% set md5 = "fde1733c4799bf08aace79ccc3dd9bc0" %}
 
 package:
   name: easybuild
-  version: "3.1.0"
+  version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.python.org/packages/b8/31/8d8582b0531533204b33f8d0f2be92e28e89eee3f7db1995dcb84e854bea/{{ name }}-{{ version }}.tar.gz
-  md5: {{  md5 }}
+  fn: easybuild-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/e/easybuild/easybuild-{{ version }}.tar.gz
+  sha256: d23c1218fed2e14bf3c7c713e9f491514e301c3af9ef3e7d34e00e3115a17b80
+  patches:
+    - setup_py.patch
 
 build:
   number: 0
   skip: True  # [win or py3k]
-  script: |
-     python setup.py install  \
-     --single-version-externally-managed \
-     --record=record.txt 
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - easybuild-easyconfigs ==3.1.0
-    - easybuild-easyblocks ==3.1.0
-    - easybuild-framework ==3.1.0
-
+    - easybuild-easyconfigs 3.1.0
+    - easybuild-easyblocks 3.1.0
+    - easybuild-framework 3.1.0
   run:
     - python
-    - easybuild-easyconfigs ==3.1.0
-    - easybuild-easyblocks ==3.1.0
-    - easybuild-framework ==3.1.0
+    - easybuild-easyconfigs 3.1.0
+    - easybuild-easyblocks 3.1.0
+    - easybuild-framework 3.1.0
 
 test:
   imports:
@@ -48,5 +44,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - jerowe 
+    - jerowe
     - boegel
