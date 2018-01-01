@@ -1,4 +1,4 @@
-{% set version = "3.1.0" %}
+{% set version = "3.5.0" %}
 
 package:
   name: easybuild
@@ -7,7 +7,7 @@ package:
 source:
   fn: easybuild-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/e/easybuild/easybuild-{{ version }}.tar.gz
-  sha256: d23c1218fed2e14bf3c7c713e9f491514e301c3af9ef3e7d34e00e3115a17b80
+  sha256: 2c939052b8de4bd932a45d8c9aedf703fd31268a05063e89b0c828bbddca8431
   patches:
     - setup_py.patch
 
@@ -20,14 +20,14 @@ requirements:
   build:
     - python
     - setuptools
-    - easybuild-easyconfigs 3.1.0
-    - easybuild-easyblocks 3.1.0
-    - easybuild-framework 3.1.0
+    - easybuild-easyconfigs 3.5.0
+    - easybuild-easyblocks 3.5.0
+    - easybuild-framework 3.5.0
   run:
     - python
-    - easybuild-easyconfigs 3.1.0
-    - easybuild-easyblocks 3.1.0
-    - easybuild-framework 3.1.0
+    - easybuild-easyconfigs 3.5.0
+    - easybuild-easyblocks 3.5.0
+    - easybuild-framework 3.5.0
 
 test:
   imports:
