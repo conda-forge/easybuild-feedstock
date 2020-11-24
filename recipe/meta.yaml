@@ -1,4 +1,4 @@
-{% set version = "3.9.3" %}
+{% set version = "4.3.1" %}
 
 package:
   name: easybuild
@@ -7,13 +7,13 @@ package:
 source:
   fn: easybuild-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/e/easybuild/easybuild-{{ version }}.tar.gz
-  sha256: eadf0b9829a9642ff3725e5a7d43ccf7cb235c4a29c2d93fe559ccf2ce77ac9c
+  sha256: 2d3c9cf6603f12cca6b3b5afe381df66d6bcce546199ace84cb9ca2aefdc3e59
   patches:
     - setup_py.patch
 
 build:
-  number: 1
-  skip: True  # [win or py3k]
+  number: 0
+  skip: true  # [win or py3k]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -38,8 +38,8 @@ test:
 about:
   home: http://hpcugent.github.com/easybuild
   license: GPLv2
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  summary: 'EasyBuild is a software build\nand installation framework that allows you to manage (scientific) software\non High Performance Computing (HPC) systems in an efficient way.'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
+  summary: EasyBuild is a software build\nand installation framework that allows you to manage (scientific) software\non High Performance Computing (HPC) systems in an efficient way.
   license_family: GPL2
 
 extra:
