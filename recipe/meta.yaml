@@ -12,12 +12,12 @@ source:
     - setup_py.patch
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win or py3k]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - easybuild-easyconfigs 3.5.0
